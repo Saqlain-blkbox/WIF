@@ -15,3 +15,7 @@ resource "google_storage_bucket" "wif-storage-001" {
   location                 = "us-central1"
   uniform_bucket_level_access = true
 }
+
+resource "random_id" "unique_id" {
+  byte_length = 8
+}
