@@ -10,10 +10,8 @@ provider "google" {
   region  = "us-central1"
 }
 
-resource "google_storage_bucket" "wif-storage-001" {
-  name                     = "wiftest-bucket-${random_id.unique_id.hex}"
-  location                 = "us-central1"
-  uniform_bucket_level_access = true
+resource "google_pubsub_topic" "pubsub_topic" {
+  name = "pubsub-topic-${random_id.unique_id.hex}"
 }
 
 resource "random_id" "unique_id" {
